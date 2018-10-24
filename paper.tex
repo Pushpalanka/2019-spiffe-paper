@@ -1,0 +1,110 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage{epsfig,endnotes}
+\usepackage{times}
+\usepackage{fullpage}
+\usepackage{xspace}
+\usepackage{cite}
+\usepackage{ifpdf}
+\usepackage{float}
+\usepackage{color}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{comment}
+\usepackage{wrapfig}
+\usepackage{subfigure}
+\usepackage{hyperref}
+\usepackage[normalem]{ulem}
+\usepackage{rotating}
+
+\usepackage[labelfont=bf]{caption}
+\usepackage{flushend}
+
+% Better typewriter font:
+\usepackage{inconsolata}
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{3pt}{3pt}
+\titlespacing{\subsection}{0pt}{2pt}{2pt}
+\titlespacing{\subsubsection}{0pt}{1pt}{1pt}
+
+\newif\ifrev
+%%%%%%%%%%%%%%%%%%
+% COMMENT OUT NEXT LINE TO HIDE TODOs
+\revtrue
+%%%%%%%%%%%%%%%%%%
+
+
+\newif\iftr
+%%%%%%%%%%%%%%%%%%
+% comment out next line to HIDE TR CONTENT (to create an ATC submission version)
+% \trtrue
+\iftr
+ \newcommand{\tr}[1]{{#1}}
+\else
+ \newcommand{\tr}[1]{}
+\fi 
+%%%%%%%%%%%%%%%%%%
+
+\newcommand{\urlwofont}[1]{\underline{\urlstyle{same}\url{#1}}}
+\input{annotations}
+
+\ifrev
+%  \newcommand{\yanyan}[1]{{\color{blue} [Yanyan: #1]}}
+%  \newcommand{\cappos}[1]{{\color{red} [Justin: #1]}}
+%  \newcommand{\ivan}[1]{{\color{cyan} [Ivan: #1]}}
+%  \newcommand{\todo}[1]{{\color{red} [todo: #1]}}
+%  \newcommand{\albert}[1]{{\color{magenta} [Albert: #1]}}
+\else
+%  \newcommand{\yanyan}[1]{}
+%  \newcommand{\cappos}[1]{}
+%  \newcommand{\ivan}[1]{}
+%  \newcommand{\todo}[1]{}
+%  \newcommand{\albert}[1]{}
+\fi
+
+
+%\newcommand{\sysname}{Tsumiki\xspace}
+%\newcommand{\sensor}{Sensibility testbed\xspace}
+%\newcommand{\censor}{ICLab\xspace}
+%\newcommand{\router}{BISmark\xspace}
+%\newcommand{\toma}{ToMaTo\xspace}
+\newcommand{\eat}[1]{}
+
+\newcommand{\maple}{\raisebox{4pt}{\includegraphics[width=5.5pt]{maple}}}
+
+%% set itemize indent
+
+\usepackage[shortlabels]{enumitem}
+\setlist[itemize]{leftmargin=0.15in}
+
+\begin{document}
+
+\title{\bf SPIFFE: (some smart title)}
+\author{
+Joe Beda, Justin Cappos, Spike Curtis, Jon Debonis, Evan Gilman, \\ 
+JJ Jeyappragash, Matt Moyer, Enrico Schiattarella \\
+${}^{ny}$\,New York University (I'll fix affiliations later)\\
+%% \resizebox{\textwidth}{!}{\href{mailto:jcappos@nyu.edu,yyzh@cs.ubc.ca,ar3945@nyu.edu,bestchai@cs.ubc.ca}%
+%% {\texttt{jcappos@nyu.edu,yyzh@cs.ubc.ca,ar3945@nyu.edu,bestchai@cs.ubc.ca}}}
+}
+
+\date{}
+\maketitle
+\thispagestyle{empty}
+
+\input{abstract}
+\input{introduction}
+\input{motivation}
+\input{goals}
+\input{principles}
+\input{design}
+%\input{components}
+%\input{interfaces}
+
+% \input{discussion}
+\input{related}
+\input{conclusion}
+
+
+{\scriptsize \bibliographystyle{abbrv} \bibliography{paper}} 
+
+\end{document}
